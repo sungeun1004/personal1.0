@@ -1,0 +1,275 @@
+main{
+
+}
+.main{ 
+  max-width: 1440px;
+  margin: 0 auto;
+} 
+#profile{
+  height: 100vh;
+  background-color: #b04c1ae3;
+  min-height: 1000px;
+}
+#profile h2{
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  padding-top: 100px;
+}
+#profile .flex{
+  gap: 120px;
+  padding: 100px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#profile ul{ 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+}
+#profile img{ 
+width: 400px; height: 568px; border: 4px solid #fff; border-bottom-width: 34px;
+  
+  width: calc(480px * 0.8);
+  height: calc(680px * 0.8);
+  border: 28px solid #eeebe4;
+  border-bottom-width: 90px;
+  box-shadow: 1px 3px 8px #414141;
+}
+#profile p.intro{  
+  font-weight: 500;
+}
+#profile ul li{
+  color: white;
+  position: relative;
+  align-content: center;
+}
+#profile ul li:nth-child(1){
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+#profile ul li:nth-child(2){
+  grid-column: 1;
+  grid-row: 2;
+}
+#profile ul li:nth-child(3){
+  grid-column: 2;
+  grid-row: 2;
+}
+#profile ul li:nth-child(4){
+  grid-column: 1;
+  grid-row: 3;
+}
+#profile ul li h3{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 2;
+  position: relative;
+  display: inline;
+}
+#profile ul li h3::after{
+  content: '';
+  width: 100%;
+  height: 7px;
+  background-color: #ffed8d9c;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  bottom: 3px; 
+}
+#profile ul li p{
+  line-height: 2;
+}
+
+/* skill */
+
+#skill{
+  height: 100vh;
+  min-height: 1000px;
+}
+#skill .w1200{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#skill h2{
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  color: #dd5512;
+  padding-top: 100px;
+}
+#skill h3{
+  padding: 30px 0;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+#skill li{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#skill li::before{
+  content: "";
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 72px;
+  height: 72px;
+  font-size: 0;
+}
+#skill p{
+  margin-top: 20px;
+}
+#skill p.bg{  
+  font-size: 600px;
+  color: transparent;
+  -webkit-text-stroke: 1px gray;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  margin-top: initial;
+  letter-spacing: 66px;
+}
+#skill .group{
+  background-color: #b04c1ae3;
+  border-radius: 20px;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+#skill .prgm{
+  display: flex;
+  background-color: initial;
+  justify-content: space-around;
+}
+#skill .front{
+  width: 1200px;
+  height: 300px;
+}
+#skill .front li:nth-child(1):before{
+  background-image: url(../img/html.svg);
+  transform: translateX(6px);
+}
+#skill .front li:nth-child(2):before{
+  background-image: url(../img/css.svg);
+  transform: translateX(7px);
+}
+#skill .front li:nth-child(3):before{
+  background-image: url(../img/js.svg);
+}
+#skill .front li:nth-child(4):before{
+  background-image: url(../img/jquery.svg);
+}
+#skill .front li:nth-child(5):before{
+  background-image: url(../img/반응형.svg);
+}
+#skill .design{
+  width: 360px;
+  height: 300px;
+  margin-right:55px;
+}
+#skill .design li:nth-child(1):before{
+  background-image: url(../img/ps.svg);
+}
+#skill .design li:nth-child(2):before{
+  background-image: url(../img/illust.svg);
+}
+#skill .design li:nth-child(3):before{
+  background-image: url(../img/figma.svg);
+}
+#skill .team{
+  width: 360px;
+  height: 300px;
+  margin-right:55px;
+}
+#skill .team li:nth-child(1):before{
+  background-image: url(../img/git.svg);
+}
+#skill .team li:nth-child(2):before{
+  background-image: url(../img/gdrive.svg);
+}
+#skill .team li:nth-child(3):before{
+  background-image: url(../img/firefox.svg);
+}
+#skill .other{
+  width: 360px;
+  height: 300px;
+}
+#skill .other li:nth-child(1):before{
+  background-image: url(../img/vsc.svg);
+}
+#skill .other li:nth-child(2):before{
+  background-image: url(../img/emmet.svg);
+}
+#skill .other li:nth-child(3):before{
+  background-image: url(../img/scss.svg);
+}
+
+/* project */
+
+#project{
+  padding: 20px 0;
+  height: 100vh;
+  background-color: #b04c1ae3;
+  min-height: 1000px;
+}
+#project li{
+
+}
+#project p.cap{  
+  font-size: 16px;  
+  color: #fff8db;
+  display: block;
+  margin: 20px auto;
+  max-width: 1200px;
+  text-align: center;
+  font-weight: 500;
+}
+#project .main h2{
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  color: ivory;
+  padding-top: 50px;
+}
+#project .main h3{
+  font-size: 16px;
+  font-weight: 400;
+  color: #8a8a8a;
+  text-align: center;
+  margin: 15px 0;
+  color: #fda03c;
+  margin-bottom: 80px;
+}
+#project img{  
+  border: 4px solid ivory;
+  width: 1200px;
+  margin: 0 auto;
+}
+#project .main>ul .slick-prev::before{
+  background-image: url(../img/arrowLW.svg);
+}
+#project .main>ul .slick-next::before{  
+  background-image: url(../img/arrowRW.svg);
+}
+#project .main>ul .slick-prev::before, #project .main>ul .slick-next::before{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  display: block;
+  transition: 0.7s;
+}
+#project .main>ul .slick-dots li button::before{
+  font-size: 8px;
+}
+#project .main>ul  .slick-dots li{
+  margin: 15px;
+}
