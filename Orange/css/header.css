@@ -1,0 +1,51 @@
+header {
+  height: 100px;
+  position: absolute;
+  width: 100%;
+}
+header nav {
+  align-items: center;
+  max-width: 1700px;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0 auto;
+}
+header nav h1 {
+
+}
+header nav h1 a {
+  font-size: 30px;
+  color: #dd5512;
+}
+header nav ul.gnb {
+}
+header nav ul.gnb li {
+
+}
+header nav ul.gnb li a {
+  padding: 0px 30px;
+  transition:0.5s;
+  color: #dd5512;
+  font-size: 18px;
+}
+header nav ul.gnb li a:hover {
+  color:#666;
+  text-decoration: underline;
+}
+header nav ul.gnb li a.fr {
+  }
+header nav ul.lang {
+}
+header nav ul.lang li {
+
+}
+header nav ul.lang li a {
+  padding: 0 5px;
+  font-size: 13px;
+  color: gray;
+  transition:0.5s;
+}
+header nav ul.lang li a:hover {
+  color:#2e2e2e;
+  font-weight: bold;
+}

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT : KIMSUNGEUN</title>
+    <!-- favicon -->
+    <link rel="icon" href="img/bg_orange.png">
+    <!-- style -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/ham.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">    
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- 슬릭 -->
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script>        
+        $(document).ready(function(){
+            $('.pjt').slick({
+                nfinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots:true
+            });
+            // const text = "Design Publish";
+            // const typingTextElement = document.getElementById("typing-text");
+
+            // let i = 0;
+
+            // function typeText() {
+            //     if (i < text.length) {
+            //         typingTextElement.textContent += text.charAt(i);
+            //         i++;
+            //         setTimeout(typeText, 100);
+            //     }
+            // }
+
+            // typeText();         
+            const typingTextElement = document.getElementById("typing-text");
+            const text = typingTextElement.getAttribute("data-text"); // HTML의 텍스트 가져오기
+
+            let i = 0;
+
+            function typeText() {
+                if (i < text.length) {
+                    typingTextElement.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeText, 100);
+                }
+            }
+
+            typeText();  
+        });
+    </script>
+    <script>  //반응형 모바일에서 슬릭 제거
+        $(document).ready(function(){            
+            if($(window).width()<769){ 
+                $('.pjt').slick('unslick');         
+            }
+            function handleAOS() {
+            if (window.innerWidth < 768) {
+                AOS.refreshHard(); // 모바일에서 효과 초기화
+            } else {
+                AOS.refresh(); // 데스크톱에서 효과 다시 적용
+            }
+            }      
+        });
+    </script>
+
+
+    <!-- 스크롤 -->
+    <script type="text/javascript">
+        window.onload = function () {
+            var elm = ".scroll";
+            $("section").unwrap("main");
+            $("section").css("height","100%");
+            $(elm).each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        if (window.opera) delta = -delta;
+                    } 
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(elm).eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                            }catch(e){}
+                        }
+                    }
+                    
+                    // 화면 이동 0.8초(800)
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 800, complete: function () {
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    
+
+
+
+    <!-- aos -->
+    <link rel="stylesheet" href="js/aos.css">
+    <script src="js/aos.js"></script>
+    <script>
+        $(document).ready(function(){
+            AOS.init();
+        });
+    </script>
+</head>
+<body>
+    <!-- 상단영역 -->
+    <header>
+        <nav class="flex">
+            <h1><a href="" class="block">PROJECT : KIMSUNGEUN</a></h1>
+            <ul class="gnb flex">
+                <li><a href="" class="block">Profile</a></li>
+                <li><a href="" class="block">Skill</a></li>
+                <li><a href="" class="block">Project</a></li>
+                <li><a href="" class="block">Contact</a></li>
+            </ul>
+            <a href="" class="ham">메뉴보기</a>
+        </nav>    
+    </header>
+    <!-- 타이틀영역 -->   
+    <div id="title" class="scroll">
+        <img src="img/light.jpg">
+        <h1>abcdef abcdef</h1>
+        <div class="typing-container">
+            <span id="typing-text" data-text="Web Design　&　Publish"></span>
+            <span class="cursor">|</span>
+        </div>
+    </div>
+    <!-- 메인영역 -->
+    <main class="scroll">
+        <section id="profile" class="scroll">
+            <div class="main">
+                <h2 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Profile</h2>
+                <div class="flex">
+                    <img src="img/beige cut.jpg">                    
+                    <ul>
+                        <li>
+                            <p class="intro">안녕하세요. 웹디자이너이자 웹퍼블리셔인 김성은입니다 :)<br>                    
+                            기능성과 미적 요소의 조화를 통해 시각적 효과와                        
+                            높은 성능을 모두 갖춘 웹사이트를 추구합니다.<br>                        
+                            미니멀리즘과 직관적인 사용을 중요시 하며,                        
+                            사용자의 요구와 사업적 목표를 동시에 충족하는 솔루션을 제공합니다.                        
+                            다양한 프로젝트에 참여하고, 사용자 경험을 극대화 할 수 있는                        
+                            웹사이트를 구축하는 것을 목표로 하고 있습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Certifications</h3>
+                            <p>abcdef</p>
+                            <p>abcdef</p>
+                            <p>abcdef</p>
+                        </li>
+                        <li>
+                            <h3>Experience</h3>
+                            <p>abcdef</p>
+                            <p>abcdef</p>
+                            <p>abcdef</p>
+                        </li>
+                        <li>
+                            <h3>Courses Completed</h3>
+                            <p>abcdef</p>
+                            <p>abcdef</p>
+                            <p>abcdef</p>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+           
+        </section>
+        <section id="skill" class="scroll">            
+            <div class="main">
+                <div class="w1200">
+                    <h2 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Skill</h2>
+                    <div class="front group">
+                        <h3>Frontend</h3>
+                        <ul class="prgm">
+                            <li>
+                                <p>HTML</p>
+                            </li>
+                            <li>
+                                <p>CSS</p>
+                            </li>
+                            <li>
+                                <p>Java Script</p>
+                            </li>
+                            <li>
+                                <p>J Query</p>
+                            </li>
+                            <li>
+                                <p>Responsive</p>
+                            </li>
+                    </div>
+                    <div class="design group">
+                        <h3>Design Tool</h3>
+                        <ul class="prgm">
+                            <li>
+                                <p>Photoshop</p>
+                            </li>
+                            <li>
+                                <p>Illustrator</p>
+                            </li>
+                            <li>
+                                <p>Figma</p>
+                            </li>                          
+                        </ul>
+                    </div> 
+                    <div class="team group">
+                        <h3>Teamwork</h3>
+                        <ul class="prgm">
+                            <li>
+                                <p>Github</p>
+                            </li>
+                            <li>
+                                <p>Google Drive</p>
+                            </li>
+                            <li>
+                                <p>Firefox</p>
+                            </li>                         
+                        </ul>
+                    </div><div class="other group">
+                        <h3>Other</h3>
+                        <ul class="prgm">
+                            <li>
+                                <p>VSC</p>
+                            </li>
+                            <li>
+                                <p>Emmet</p>
+                            </li>
+                            <li>
+                                <p>Sass</p>
+                            </li>                          
+                        </ul>
+                    </div>       
+                    
+                </div>
+            </div>
+        </section>
+        <section id="project" class="scroll">
+            <div class="main">
+                <h2 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Project</h2>
+                <h3></h3>
+                <ul class="pjt">                    
+                    <li>
+                        <div class="prdlist">
+                            <a href="">
+                                <img src="img/HLL.png">
+                                <p class="cap">HLL중앙</p>    
+                            </a>                        
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prdlist">
+                            <a href="">
+                                <img src="img/Urbanic30.png">
+                                <p class="cap">Urbanic30</p>   
+                            </a>                         
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prdlist">
+                            <a href="">
+                                <img src="img/DICON.png">
+                                <p class="cap">DICON</p> 
+                            </a>                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prdlist">
+                            <a href="">
+                                <img src="img/CAFFEBENE.png">
+                                <p class="cap">CaffeBene redesign</p>   
+                            </a>                         
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="contact" class="scroll">
+            <div class="main">
+                <h2 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Contact</h2>
+                <div class="front group">
+                    <ul class="prgm">
+                        <li>010-7777-7777</li>
+                        <li>sungeun@gmail.com</li>
+                        <li>https://github.com/sungeun</li>
+                    </ul>    
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- 하단영역 -->
+    <footer>
+        <div class="wrap">         
+            <div class="ft">
+                <p class="copyright">Copyright© by Sungeun Kim, All rights reserved.</p>
+                <!-- <div class="sns">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="">instagram</a></li>                    
+                        <li><a href="">blog</a></li>                    
+                        <li><a href="">facebook</a></li>
+                        <li><a href="">youtube</a></li>
+                        <li><a href="">app</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
